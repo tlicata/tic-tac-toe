@@ -17,7 +17,7 @@ We also use `webpack` for bundling our JavaScript. Before you load
 `index.html` in your browser, you'll need to run:
 
 ```sh
-./node_modules/webpack/bin/webpack.js index.js bundle.js
+./node_modules/webpack/bin/webpack.js
 ```
 
 Goals
