@@ -3,6 +3,23 @@ Tic-Tac-Toe
 
 This is an implementation of the tic-tac-toe game.
 
+Running Locally
+---------------
+
+This project uses `npm` for managing dependencies. After you clone
+this repository, you can install its dependencies by running:
+
+```sh
+npm install
+```
+
+We also use `webpack` for bundling our JavaScript. Before you load
+`index.html` in your browser, you'll need to run:
+
+```sh
+./node_modules/webpack/bin/webpack.js index.js bundle.js
+```
+
 Goals
 -----
 
