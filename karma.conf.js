@@ -21,9 +21,28 @@ module.exports = function(config) {
     ],
 
 
+    // webpack to preprocess our scripts
+    webpackMiddleware: {
+      noInfo: true // prevent webpack verbose output
+    },
+    webpack: {
+      devtool: 'inline-source-map',
+      // copy from webpack.config.js
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['react']
+          }
+        }]
+      }
+    },
+
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'spec/**/*spec.js': ['webpack']
     },
 
 
