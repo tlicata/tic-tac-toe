@@ -20,6 +20,12 @@ We also use `webpack` for bundling our JavaScript. Before you load
 ./node_modules/webpack/bin/webpack.js
 ```
 
+The tests can be run with:
+
+```sh
+npm test
+```
+
 Goals
 -----
 
