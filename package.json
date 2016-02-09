@@ -4,6 +4,9 @@
   "description": "An implementation of the tic-tac-toe game",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "prod": "./node_modules/.bin/webpack --optimize-minimize",
+    "watch": "./node_modules/.bin/webpack --watch",
     "test": "./node_modules/.bin/karma start"
   },
   "devDependencies": {
