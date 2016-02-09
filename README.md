@@ -7,18 +7,21 @@ Running Locally
 ---------------
 
 This project uses `npm` for managing dependencies. After you clone
-this repository, you can install its dependencies by running:
+the repository, install the dependencies by running:
 
 ```sh
 npm install
 ```
 
-We also use `webpack` for bundling our JavaScript. Before you load
-`build/index.html` in your browser, you'll need to run:
+Bundle and pre-process the JavaScript with:
 
 ```sh
-./node_modules/webpack/bin/webpack.js
+npm run-script build
 ```
+
+(`npm run-script watch` is also available)
+
+Then you can open `build/index.html` in your browser.
 
 The tests can be run with:
 
