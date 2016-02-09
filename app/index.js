@@ -7,5 +7,10 @@ require("./styles.scss");
 
 ReactDOM.render(
   React.createElement(Board),
-  document.getElementById("container")
+  document.getElementById("container-one")
+);
+
+ReactDOM.render(
+  React.createElement(Board),
+  document.getElementById("container-two")
 );
