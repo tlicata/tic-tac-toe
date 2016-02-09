@@ -51,6 +51,16 @@ var game = function (board, player) {
     },
     isOver: function () {
       return whoWon(board) || isBoardFull(board);
+    },
+    message: function () {
+      var status = this.isOver();
+      if (!status) {
+        return "In progress";
+      } else if (Array.isArray(status)) {
+        return this.playerAt(status[0]) + " wins!";
+      } else {
+        return "A tie!";
+      }
     }
   }
 };

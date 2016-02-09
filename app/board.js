@@ -1,6 +1,24 @@
 var React = require("react");
 var Engine = require("./engine");
 
+var Restart = React.createClass({
+  render: function () {
+    var game = this.props.game;
+
+    // Restart button is hidden if game is not over.
+    var classes = game.isOver() ? "" : "hidden";
+
+    return (
+      <div className={classes}>
+        <p>{game.message()}</p>
+        <button onClick={this.props.onClick}>
+          New Game
+        </button>
+      </div>
+    );
+  }
+});
+
 var Square = React.createClass({
   handleClick: function (e) {
     this.props.onPlay(this.props.position);
@@ -30,25 +48,31 @@ var Board = React.createClass({
   handlePlay: function (square) {
     this.setState(this.state.play(square));
   },
+  restart: function () {
+    this.setState(Engine.createNewGame());
+  },
   render: function () {
     var attrs = {game:this.state, onPlay:this.handlePlay};
     return (
-      <div className="board">
-        <div className="row">
-          <Square position={0} {...attrs} />
-          <Square position={1} {...attrs} />
-          <Square position={2} {...attrs} />
+      <div>
+        <div className="board">
+          <div className="row">
+            <Square position={0} {...attrs} />
+            <Square position={1} {...attrs} />
+            <Square position={2} {...attrs} />
+          </div>
+          <div className="row">
+            <Square position={3} {...attrs} />
+            <Square position={4} {...attrs} />
+            <Square position={5} {...attrs} />
+          </div>
+          <div className="row">
+            <Square position={6} {...attrs} />
+            <Square position={7} {...attrs} />
+            <Square position={8} {...attrs} />
+          </div>
         </div>
-        <div className="row">
-          <Square position={3} {...attrs} />
-          <Square position={4} {...attrs} />
-          <Square position={5} {...attrs} />
-        </div>
-        <div className="row">
-          <Square position={6} {...attrs} />
-          <Square position={7} {...attrs} />
-          <Square position={8} {...attrs} />
-        </div>
+        <Restart game={this.state} onClick={this.restart} />
       </div>
     );
   }

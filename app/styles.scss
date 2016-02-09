@@ -4,6 +4,10 @@ body {
     font-family: monospace;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .board {
     display: flex;
     flex-direction: column;
