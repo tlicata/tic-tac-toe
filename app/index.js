@@ -1,10 +1,10 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var Hello = require("./hello");
+var Board = require("./board");
 
 require("./styles.scss");
 
 ReactDOM.render(
-  React.createElement(Hello, {name: "World!"}),
+  React.createElement(Board),
   document.getElementById("container")
 );
