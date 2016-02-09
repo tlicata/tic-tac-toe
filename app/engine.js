@@ -1,5 +1,3 @@
-require("babel-polyfill");
-
 var X = "X";
 var O = "0";
 var EMPTY = " ";
