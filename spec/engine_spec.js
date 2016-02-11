@@ -1,15 +1,20 @@
 var Engine = require("../app/engine");
 
+// Test the logic of our tic-tac-toe game. The view components will
+// rely on this engine, our game logic, for their implementation.
+
 describe("The game engine", function () {
 
+  // Holds a reference to a game object.
   var game;
 
+  // Each test starts with a fresh game.
   beforeEach(function () {
     game = Engine.createNewGame();
   });
 
+  // At a minimum, the game object should exist.
   it("creates a new game", function () {
-    // At a minimum.
     expect(game).toBeDefined();
   });
 
@@ -23,13 +28,14 @@ describe("The game engine", function () {
     // |---+---+---|
     // | 6 | 7 | 8 |
 
-    // Let's try to take square #5.
+    // We'll set our sights on square #5.
     var square = 5;
 
     // Calling `play` will choose `square` as the current player's
-    // move (if the square is available and the game is not over). It
-    // will return a new game state with the updated board and the new
-    // current player.
+    // move (if the square is available and the game is not over).
+
+    // It will return a new game state with the updated board and the
+    // new current player.
     var nextState = game.play(square);
 
     // Make sure the board has changed and the square we requested has
