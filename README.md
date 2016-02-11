@@ -91,3 +91,5 @@ Bonus
     Karma also had to be integrated with webpack to compile JSX and
     bring in babel-polyfill for ES6 features. This is also configured
     in `karma.config.js`.
+
+    ![Test output with all browsers](./tests-example.png)
