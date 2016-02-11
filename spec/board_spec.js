@@ -17,6 +17,12 @@ describe("The board view", function () {
   var getSquare = function (num) {
     return ReactTestUtils.findRenderedDOMComponentWithClass(instance, "square" + num);
   };
+  var getRestartView = function () {
+    return ReactTestUtils.findRenderedDOMComponentWithClass(instance, "restart");
+  };
+  var getRestartButton = function () {
+    return ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+  };
 
   it("shows nine squares", function () {
     expect(getAllSquares().length).toEqual(9);
@@ -60,6 +66,52 @@ describe("The board view", function () {
     [3,4,5,6,7,8].forEach(function (index) {
       var dom = ReactDOM.findDOMNode(getSquare(index));
       expect(dom.classList.contains("winner")).toBe(false);
+    });
+  });
+
+  // Restart button is shown once game is over (but not before).
+  // And clicking it indeed restarts the game.
+  describe("restart button", function () {
+
+    var restartIsHidden = function () {
+      var restart = ReactDOM.findDOMNode(getRestartView());
+      return restart.classList.contains("hidden");
+    };
+
+    var playCombo = function (moves) {
+      moves.forEach(function (index) {
+        ReactTestUtils.Simulate.click(getSquare(index));
+      });
+    };
+
+    it("is hidden during the game", function () {
+      expect(restartIsHidden()).toBe(true);
+    });
+    it("appears after a tie", function () {
+      var draw = [0,4,8,3,5,2,6,7,1];
+      playCombo(draw);
+      expect(restartIsHidden()).toBe(false);
+    });
+    it("appears after a win", function () {
+      var win = [0,4,1,3,2];
+      playCombo(win);
+      expect(restartIsHidden()).toBe(false);
+    });
+    it("restarts the game when clicked", function () {
+      // Play a game till it's over.
+      var gameOver = [0,4,1,3,2];
+      playCombo(gameOver);
+
+      // Verify the restart button is there and click it.
+      expect(restartIsHidden()).toBe(false);
+      ReactTestUtils.Simulate.click(getRestartButton());
+
+      // It should now have disappeared again.
+      expect(restartIsHidden()).toBe(true);
+      // And the board (i.e., each square) should be empty.
+      getAllSquares().forEach(function (square) {
+        expect(ReactDOM.findDOMNode(square).textContent).toEqual(" ");
+      });
     });
   });
 });

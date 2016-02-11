@@ -6,7 +6,7 @@ var Restart = React.createClass({
     var game = this.props.game;
 
     // Restart button is hidden if game is not over.
-    var classes = game.isOver() ? "" : "hidden";
+    var classes = game.isOver() ? "restart" : "restart hidden";
 
     return (
       <div className={classes}>
