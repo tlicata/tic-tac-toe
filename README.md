@@ -50,14 +50,14 @@ Bonus
     Since React encourages minimizing shared state, and `engine.js`
     was written in a functional, stateless, side-effect-free manner,
     the ability to have mulitple boards on the same page came
-    naturally.
+    for free.
 
 - [X] Add the ability to restart a game after it has ended.
 
-    Again, by not storing any state in the view or globally, adding
-    restart functionality was as simple as adding the UI elements and
-    asking the engine for a clean game state and letting React handle
-    the rest:
+    Not storing any state in the view or globally made adding the
+    restart functionality fairly simple. I added the UI elements,
+    asked the engine for a clean game state, and let React handle the
+    rest:
     [1a5069d6](https://github.com/tlicata/tic-tac-toe/commit/1a5069d648ae770da792f15a2b0b6de60988ad98#diff-b768db34d2b156debfb3871af9cb87d6R52).
 
 - [X] Use module loaders like webpack or browserify for dependency
@@ -74,16 +74,18 @@ Bonus
 
 - [X] Write error handling and/or tests.
 
-    I chose the Jasmine framework for writing the tests because I was
-    familiar with it.
+    I chose Jasmine for writing the tests because I was familiar with
+    it.
 
-    I wanted to be able to drive the tests from the terminal. I'd
-    never used the Karma test runner, but it seemed like a good fit.
+    I also wanted to drive the tests from the terminal. After doing
+    some research, it seemed like the Karma test runner could be a
+    good fit.
 
-    `npm test`, via Karma, runs the tests in PhantomJS by default, but
-    it can be made to run them in Chrome, Firefox, and Safari by
-    modifying the `browsers` variable in `karma.config.js`.
+    `npm test`, via Karma, runs the tests in PhantomJS by
+    default. However, if you modify the `browsers` variable in
+    `karma.config.js`, the tests can run in Chrome, Firefox, and/or
+    Safari.
 
-    Karma also had to be integrated with webpack to compile the JSX
-    and bring in babel-polyfill for ES6 features. This is also
-    configured in `karma.config.js`.
+    Karma also had to be integrated with webpack to compile JSX and
+    bring in babel-polyfill for ES6 features. This is also configured
+    in `karma.config.js`.
