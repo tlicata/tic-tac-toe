@@ -9,9 +9,27 @@ body {
     visibility: hidden;
 }
 
+.restart {
+    margin: .5em 0 2.5em 0;
+    text-align: center;
+
+    p {
+        font-family: sans-serif;
+        margin: .4em 0;
+    }
+    button {
+        background-color: mintcream;
+        border-radius: 5px;
+        color: darkslategrey;
+        font-size: .9em;
+        padding: 7px 12px;
+    }
+}
+
 .board {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .row {
         display: flex;

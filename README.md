@@ -34,7 +34,9 @@ Bonus
 
 - [ ] Use CSS to add more detail to the wireframe above.
 
-    I will admit the CSS is ugly.
+    I will admint the styling isn't anything special. I did use
+    Flexbox for the board layout, which is probably better than the
+    table-based layout I was considering :)
 
 - [X] Demonstrate a solid understanding of MV* and using an MV*
   framework like Backbone, React, Ember or Angular
