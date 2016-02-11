@@ -83,13 +83,12 @@ Bonus
     some research, it seemed like the Karma test runner could be a
     good fit.
 
+    Karma had to be integrated with webpack to compile JSX and bring
+    in babel-polyfill. This is configured in `karma.config.js`.
+
     `npm test`, via Karma, runs the tests in PhantomJS by
     default. However, if you modify the `browsers` variable in
     `karma.config.js`, the tests can run in Chrome, Firefox, and/or
-    Safari.
-
-    Karma also had to be integrated with webpack to compile JSX and
-    bring in babel-polyfill for ES6 features. This is also configured
-    in `karma.config.js`.
+    Safari, as shown below.
 
     ![Test output with all browsers](./tests-example.png)
