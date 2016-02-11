@@ -13,6 +13,8 @@ the repository, install the dependencies by running:
 npm install
 ```
 
+(This may take a while. I apologize for the number of dependencies.)
+
 Bundle and pre-process the JavaScript with:
 
 ```sh
