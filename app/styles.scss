@@ -18,8 +18,9 @@ body {
         .square {
             cursor: pointer;
             font-size: 6em;
-            min-width: 100px;
-            min-height: 100px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
             text-align: center;
 
             &.winner {
