@@ -16,7 +16,7 @@ npm install
 Bundle and pre-process the JavaScript with:
 
 ```sh
-npm run-script build
+npm run-script build-dev
 ```
 
 (`npm run-script watch` is also available)
@@ -68,9 +68,9 @@ Bonus
     time like the present to learn. The settings can be found in
     `webpack.config.js`. It configures `index.js` as the entry point,
     preprocesses JSX and SCSS syntax, and provides the babel-polyfill
-    for ES6 features. Output is put into `build/bundle.js` via `npm
-    run-script build`, `npm run-script watch`, or `npm run-script
-    prod`.
+    for ES6 features. Output is deposited into `build/bundle.js` via
+    `npm run-script build-dev`, `npm run-script build-prod`, or `npm
+    run-script watch`.
 
 - [X] Write error handling and/or tests.
 
