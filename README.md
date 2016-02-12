@@ -7,13 +7,13 @@ Running Locally
 ---------------
 
 This project uses `npm` for managing dependencies. After you clone
-the repository, install the dependencies by running:
+the repository, install them by running:
 
 ```sh
 npm install
 ```
 
-(This may take a while. I apologize for the number of dependencies.)
+(This may take a while. I apologize for the number of libraries used.)
 
 Bundle and pre-process the JavaScript with:
 
@@ -36,8 +36,8 @@ Bonus
 
 - [ ] Use CSS to add more detail to the wireframe above.
 
-    I will admint the styling isn't anything special. I did use
-    Flexbox for the board layout, which is probably better than the
+    I will admit the styling isn't anything special. I did use Flexbox
+    for the board layout, which is probably better than the
     table-based layout I was considering :)
 
 - [X] Demonstrate a solid understanding of MV* and using an MV*
